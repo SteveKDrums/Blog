@@ -115,9 +115,6 @@ def stats():
     return render_template('stats.html', average_length=average_length, max_length=max_length,
                            min_length=min_length, total_length=total_length, median_length=median_length)
 
-with app.app_context():
-    db.create_all()
-
 if __name__ == '__main__':
     app.run(debug=True)
 
