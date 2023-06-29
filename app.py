@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/stephenkohlmann1/Flask_Projects/Blog/blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Users/stephenkohlmann1/Flask_Projects/Blog/blog.db'
 app.config['SECRET_KEY'] = 'your_secret_key'
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
