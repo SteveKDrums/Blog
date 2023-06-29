@@ -3,5 +3,5 @@ Gunicorn
 
 # Flask Packages
 flask-sqlalchemy==2.5.1;
-Flask-Login==0.4.0
+Flask-Login==0.6.2;
 
