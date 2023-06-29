@@ -4,4 +4,5 @@ Gunicorn
 # Flask Packages
 flask-sqlalchemy==2.5.1;
 Flask-Login==0.6.2;
+numpy==1.25.0;
 
