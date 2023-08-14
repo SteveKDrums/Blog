@@ -57,7 +57,7 @@ def login():
             return redirect(url_for('index'))
     return render_template('login.html')
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     if request.method == 'POST':
