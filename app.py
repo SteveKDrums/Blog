@@ -108,6 +108,7 @@ def delete(post_id):
 def stats():
     posts = BlogPost.query.all()
     title_lengths = [len(post.title) for post in posts]
+    content_lengths = [len(post.content) for post in posts]
 
     average_length = np.mean(title_lengths)
     max_length = np.max(title_lengths)
@@ -115,8 +116,16 @@ def stats():
     total_length = np.sum(title_lengths)
     median_length = np.median(title_lengths)
 
+    c_average_length = np.mean(content_lengths)
+    c_max_length = np.max(content_lengths)
+    c_min_length = np.min(content_lengths)
+    c_total_length = np.sum(content_lengths)
+    c_median_length = np.median(content_lengths)
+    
     return render_template('stats.html', average_length=average_length, max_length=max_length,
-                           min_length=min_length, total_length=total_length, median_length=median_length)
+                           min_length=min_length, total_length=total_length, median_length=median_length,
+                           c_average_length=c_average_length, c_max_length=c_max_length, c_min_length=c_min_length,
+                           c_total_length=c_total_length, c_median_length=c_median_length)
 
 with app.app_context():
     db.create_all()
