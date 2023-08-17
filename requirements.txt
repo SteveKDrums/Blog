@@ -1,5 +1,4 @@
 Flask
-<<<<<<< HEAD
 Gunicorn
 
 # Flask Packages
@@ -7,7 +6,6 @@ flask-sqlalchemy==3.0.3;
 Flask-Login==0.6.2;
 numpy==1.25.0;
 
-=======
 pip install flask_sqlalchemy
 Gunicorn
->>>>>>> 516a6ee (Logout Page Update)
+
