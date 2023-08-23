@@ -3,13 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 from datetime import datetime
 import numpy as np
-import os
+#import os
+from config import Config
 
-file_path = os.path.abspath(os.getcwd())+"/blog.db"
+
+#file_path = os.path.abspath(os.getcwd())+"/blog.db"
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config.from_object(Config)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
+#app.config['SECRET_KEY'] = 'your_secret_key'
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
